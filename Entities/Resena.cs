@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-public class Reseña
+public class Resena
 {
     [Key]
     public int ReseñaId { get; set; }

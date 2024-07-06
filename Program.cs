@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using ControlboxLibreriaAPI.Modelo;
+using Microsoft.EntityFrameworkCore;
 
+
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Database") ?? "Data Source=Database.db";
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -7,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<FiloBookContext>(options =>
+    options.UseSqlite(connectionString));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

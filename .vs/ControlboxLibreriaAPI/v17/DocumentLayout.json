@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\Projects\\ControlboxLibreriaAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +62,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T17:28:48.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FiloBookContext.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
+              "RelativeDocumentMoniker": "Modelo\\FiloBookContext.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
+              "RelativeToolTip": "Modelo\\FiloBookContext.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAIA3wBMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T17:18:39.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Categoria.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Categoria.cs",
               "RelativeDocumentMoniker": "Entities\\Categoria.cs",
@@ -62,48 +96,51 @@
               "RelativeToolTip": "Entities\\Categoria.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T17:08:03.623Z"
+              "WhenOpened": "2024-07-06T17:08:03.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Resena.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Resena.cs",
               "RelativeDocumentMoniker": "Entities\\Resena.cs",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Resena.cs",
               "RelativeToolTip": "Entities\\Resena.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBsAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T17:06:43.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Libro.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Libro.cs",
               "RelativeDocumentMoniker": "Entities\\Libro.cs",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Libro.cs",
               "RelativeToolTip": "Entities\\Libro.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAlwBgAAAAVAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAIA3wBkAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T17:05:28.963Z"
+              "WhenOpened": "2024-07-06T17:05:28.963Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
               "RelativeDocumentMoniker": "Entities\\Usuario.cs",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
               "RelativeToolTip": "Entities\\Usuario.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAsAAAARAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAtwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T16:42:35.487Z"
+              "WhenOpened": "2024-07-06T16:42:35.487Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "README.md",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -111,19 +148,21 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-07-06T16:37:09.161Z"
+              "WhenOpened": "2024-07-06T16:37:09.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ControlboxLibreriaAPI.csproj",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\ControlboxLibreriaAPI.csproj",
               "RelativeDocumentMoniker": "ControlboxLibreriaAPI.csproj",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\ControlboxLibreriaAPI.csproj",
               "RelativeToolTip": "ControlboxLibreriaAPI.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-06T16:30:02.32Z"
+              "WhenOpened": "2024-07-06T16:30:02.32Z",
+              "EditorCaption": ""
             }
           ]
         },

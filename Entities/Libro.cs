@@ -23,5 +23,5 @@ public class Libro
 
     // Navegation Properties
     public Categoria? Categoria { get; set; }
-    public ICollection<Reseña>? Reseñas { get; set; }
+    public ICollection<Resena>? Reseñas { get; set; }
 }

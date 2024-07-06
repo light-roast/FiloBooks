@@ -20,9 +20,8 @@ public class Usuario
     [JsonIgnore]
     public string? Contraseña { get; set; }
 
-    public string? FotoPerfil { get; set; }
 
     // Navegation Property
-    public ICollection<Reseña>? Reseñas { get; set; }
+    public ICollection<Resena>? Reseñas { get; set; }
 }
 
