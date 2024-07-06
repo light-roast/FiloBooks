@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\ControlboxLibreriaAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\resenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\resenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\libroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\libroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,6 +83,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ResenasController.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\ResenasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ResenasController.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\ResenasController.cs",
+              "RelativeToolTip": "Controllers\\ResenasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T19:17:30.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LibrosController.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\LibrosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LibrosController.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\LibrosController.cs",
+              "RelativeToolTip": "Controllers\\LibrosController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T19:16:08.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriasController.cs",
@@ -87,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
@@ -100,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -113,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -126,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FiloBookContext.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
               "RelativeDocumentMoniker": "Modelo\\FiloBookContext.cs",
@@ -139,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Categoria.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Categoria.cs",
               "RelativeDocumentMoniker": "Entities\\Categoria.cs",
@@ -152,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Resena.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Resena.cs",
               "RelativeDocumentMoniker": "Entities\\Resena.cs",
@@ -165,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Libro.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Libro.cs",
               "RelativeDocumentMoniker": "Entities\\Libro.cs",
@@ -178,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Usuario.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
               "RelativeDocumentMoniker": "Entities\\Usuario.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "README.md",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -204,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ControlboxLibreriaAPI.csproj",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\ControlboxLibreriaAPI.csproj",
               "RelativeDocumentMoniker": "ControlboxLibreriaAPI.csproj",
