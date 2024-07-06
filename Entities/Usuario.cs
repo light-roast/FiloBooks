@@ -14,11 +14,16 @@ public class Usuario
 
     [Required]
     [EmailAddress]
+    [JsonIgnore]
     public string? CorreoElectronico { get; set; }
 
     [Required]
     [JsonIgnore]
     public string? Contraseña { get; set; }
+
+    [Required]
+    [JsonIgnore]
+    public string? Rol { get; set; }
 
 
     // Navegation Property
