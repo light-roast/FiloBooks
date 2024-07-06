@@ -1,5 +1,6 @@
 using ControlboxLibreriaAPI.Modelo;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 
 
 var builder = WebApplication.CreateBuilder(args);
