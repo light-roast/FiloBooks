@@ -28,7 +28,7 @@ namespace ControlboxLibreriaAPI.Modelo
             modelBuilder
                 .Entity<Usuario>()
                 .HasData(
-                    new Usuario { UsuarioId = 1, NombreUsuario = "Daniel Echeverri LLano", Contraseña = "default_diffindb", CorreoElectronico = "echeverri121@gmail.com", Rol = "admin" }
+                    new Usuario { UsuarioId = 1, NombreUsuario = "Daniel Echeverri LLano", Contraseña = "default_diffindb", CorreoElectronico = "echeverri121@gmail.com" }
                     
                 );
         }

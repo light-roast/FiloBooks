@@ -26,6 +26,14 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+# Ignore Firebase config files
+firebase-config*.json
+*firebase-config*.json
+*firebase*.json
+
+# Ignore any JSON file with 'firebase' in the name (optional, use cautiously)
+*firebase*.json
+
 # Visual Studio 2015 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot

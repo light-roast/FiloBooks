@@ -24,11 +24,6 @@ public class Usuario
 
     public string? Contraseña { get; set; }
 
-    [Required]
-    [System.Text.Json.Serialization.JsonIgnore]
-    [JsonProperty("rol", Required = Required.Always)]
-    public string? Rol { get; set; }
-
 
     // Navegation Property
     [System.Text.Json.Serialization.JsonIgnore]
