@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Projects\\ControlboxLibreriaAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\authentication\\firebaseauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -50,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T17:26:53.985Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -144,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -156,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -168,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -180,15 +163,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBgAAAAAAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAmwDAAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T20:13:47.434Z"
+              "WhenOpened": "2024-07-06T20:13:47.434Z",
+              "EditorCaption": ""
             }
           ]
         },
