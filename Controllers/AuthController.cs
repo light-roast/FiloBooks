@@ -9,10 +9,12 @@ using System.Text;
 public class AuthController : ControllerBase
 {
     private readonly FirebaseAuth _firebaseAuth;
+    private readonly IConfiguration _configuration;
 
-    public AuthController(FirebaseApp firebaseApp)
+    public AuthController(FirebaseApp firebaseApp, IConfiguration configuration)
     {
         _firebaseAuth = FirebaseAuth.GetAuth(firebaseApp);
+        _configuration = configuration;
     }
 
     [HttpPost("signup")]
@@ -39,10 +41,18 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
+        var apiKey = _configuration["Firebase:ApiKey"];
+
+        // Check if API key is null or empty
+        if (string.IsNullOrEmpty(apiKey))
+        {
+            return BadRequest("API key is not configured.");
+        }
+
         try
         {
             // 1. Verify Password using Firebase Authentication REST API
-            var verificationUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBosPCmgN2pehJRWwJa-DhtBON6DfzJ-DQ";
+            var verificationUrl = $"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={apiKey}";
             var verificationBody = new
             {
                 email = model.Email,

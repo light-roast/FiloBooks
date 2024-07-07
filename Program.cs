@@ -20,6 +20,11 @@ builder.Services.AddControllers()
     });
 
 var configuration = builder.Configuration;
+
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddUserSecrets<Program>()  
+    .AddEnvironmentVariables();
 var firebaseConfigPath = configuration["GOOGLE_APPLICATION_CREDENTIALS"];
 
 builder.Services.AddSingleton(sp =>
