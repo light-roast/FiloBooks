@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ControlboxLibreriaAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class NewMigrationAgain : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,15 +28,13 @@ namespace ControlboxLibreriaAPI.Migrations
                 name: "Usuario",
                 columns: table => new
                 {
-                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    NombreUsuario = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    CorreoElectronico = table.Column<string>(type: "TEXT", nullable: false),
-                    Contraseña = table.Column<string>(type: "TEXT", nullable: false)
+                    FirebaseUserId = table.Column<string>(type: "TEXT", nullable: false),
+                    Username = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    CorreoElectronico = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
+                    table.PrimaryKey("PK_Usuario", x => x.FirebaseUserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -68,11 +66,12 @@ namespace ControlboxLibreriaAPI.Migrations
                 {
                     ReseñaId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false),
+                    FirebaseUserId = table.Column<string>(type: "TEXT", nullable: false),
                     LibroId = table.Column<int>(type: "INTEGER", nullable: false),
                     Calificacion = table.Column<int>(type: "INTEGER", nullable: false),
                     Comentario = table.Column<string>(type: "TEXT", nullable: false),
-                    FechaReseña = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    FechaReseña = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UsuarioFirebaseUserId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,17 +83,11 @@ namespace ControlboxLibreriaAPI.Migrations
                         principalColumn: "LibroId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Resena_Usuario_UsuarioId",
-                        column: x => x.UsuarioId,
+                        name: "FK_Resena_Usuario_UsuarioFirebaseUserId",
+                        column: x => x.UsuarioFirebaseUserId,
                         principalTable: "Usuario",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "FirebaseUserId");
                 });
-
-            migrationBuilder.InsertData(
-                table: "Usuario",
-                columns: new[] { "UsuarioId", "Contraseña", "CorreoElectronico", "NombreUsuario" },
-                values: new object[] { 1, "default_diffindb", "echeverri121@gmail.com", "Daniel Echeverri LLano" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Libro_CategoriaId",
@@ -107,9 +100,9 @@ namespace ControlboxLibreriaAPI.Migrations
                 column: "LibroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Resena_UsuarioId",
+                name: "IX_Resena_UsuarioFirebaseUserId",
                 table: "Resena",
-                column: "UsuarioId");
+                column: "UsuarioFirebaseUserId");
         }
 
         /// <inheritdoc />

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControlboxLibreriaAPI.Migrations
 {
     [DbContext(typeof(FiloBookContext))]
-    [Migration("20240706174729_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240707163854_NewMigrationAgain")]
+    partial class NewMigrationAgain
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,52 +84,42 @@ namespace ControlboxLibreriaAPI.Migrations
                     b.Property<DateTime>("FechaReseña")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FirebaseUserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UsuarioFirebaseUserId")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ReseñaId");
 
                     b.HasIndex("LibroId");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("UsuarioFirebaseUserId");
 
                     b.ToTable("Resena");
                 });
 
             modelBuilder.Entity("ControlboxLibreriaAPI.Entities.Usuario", b =>
                 {
-                    b.Property<int>("UsuarioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Contraseña")
-                        .IsRequired()
+                    b.Property<string>("FirebaseUserId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CorreoElectronico")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("NombreUsuario")
+                    b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("UsuarioId");
+                    b.HasKey("FirebaseUserId");
 
                     b.ToTable("Usuario");
-
-                    b.HasData(
-                        new
-                        {
-                            UsuarioId = 1,
-                            Contraseña = "default_diffindb",
-                            CorreoElectronico = "echeverri121@gmail.com",
-                            NombreUsuario = "Daniel Echeverri LLano"
-                        });
                 });
 
             modelBuilder.Entity("ControlboxLibreriaAPI.Entities.Libro", b =>
@@ -153,9 +143,7 @@ namespace ControlboxLibreriaAPI.Migrations
 
                     b.HasOne("ControlboxLibreriaAPI.Entities.Usuario", "Usuario")
                         .WithMany("Reseñas")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsuarioFirebaseUserId");
 
                     b.Navigation("Libro");
 

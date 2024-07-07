@@ -38,20 +38,32 @@ namespace ControlboxLibreriaAPI.Authentication
 
             string token = bearerToken.Substring("Bearer ".Length);
 
-            FirebaseToken firebaseToken = await FirebaseAuth.GetAuth(_firebaseApp).VerifyIdTokenAsync(token);
+            try
+            {
+                FirebaseToken firebaseToken = await FirebaseAuth.GetAuth(_firebaseApp).VerifyIdTokenAsync(token);
 
-            return AuthenticateResult.Success(new AuthenticationTicket(new ClaimsPrincipal(new List<ClaimsIdentity>()
+                return AuthenticateResult.Success(new AuthenticationTicket(new ClaimsPrincipal(new List<ClaimsIdentity>()
                 {
                 new ClaimsIdentity(ToClaims(firebaseToken.Claims))
                 }
-            ), JwtBearerDefaults.AuthenticationScheme));
+                ), JwtBearerDefaults.AuthenticationScheme));
+            }
+            catch (Exception ex)
+            {
+                {
+                    return AuthenticateResult.Fail(ex);
+                }
+            } 
+            
         }
 
         private IEnumerable<Claim> ToClaims(IReadOnlyDictionary<string, object> claims)
         {
             return new List<Claim>
             {
-
+                new Claim(ClaimTypes.NameIdentifier, claims["user_id"].ToString()),
+                new Claim(ClaimTypes.Email, claims["email"].ToString()),
+                new Claim(ClaimTypes.Name, claims["name"].ToString())
             };
         }
     }
