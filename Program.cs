@@ -18,11 +18,12 @@ builder.Services.AddControllers()
         options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     });
+
+var configuration = builder.Configuration;
+var firebaseConfigPath = configuration["GOOGLE_APPLICATION_CREDENTIALS"];
+
 builder.Services.AddSingleton(sp =>
 {
-    var configuration = sp.GetRequiredService<IConfiguration>();
-    var firebaseConfigPath = configuration["GOOGLE_APPLICATION_CREDENTIALS"];
-
     if (string.IsNullOrEmpty(firebaseConfigPath))
     {
         throw new InvalidOperationException("FirebaseConfigPath is not set in configuration.");
