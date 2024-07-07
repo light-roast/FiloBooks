@@ -8,7 +8,7 @@ public class Resena
     public int ReseñaId { get; set; }
 
     [Required]
-    public string FirebaseUserId { get; set; }
+    public string? FirebaseUserId { get; set; }
 
     [Required]
     public int LibroId { get; set; }

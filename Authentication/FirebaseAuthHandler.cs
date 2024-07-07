@@ -50,9 +50,11 @@ namespace ControlboxLibreriaAPI.Authentication
             }
             catch (Exception ex)
             {
+#pragma warning disable S1199 // Nested code blocks should not be used
                 {
                     return AuthenticateResult.Fail(ex);
                 }
+#pragma warning restore S1199 // Nested code blocks should not be used
             } 
             
         }
@@ -61,9 +63,9 @@ namespace ControlboxLibreriaAPI.Authentication
         {
             return new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, claims["user_id"].ToString()),
-                new Claim(ClaimTypes.Email, claims["email"].ToString()),
-                new Claim(ClaimTypes.Name, claims["name"].ToString())
+                new Claim(ClaimTypes.NameIdentifier, claims["user_id"]?.ToString() ?? string.Empty),
+                new Claim(ClaimTypes.Email, claims["email"]?.ToString() ?? string.Empty),
+                new Claim(ClaimTypes.Name, claims["name"]?.ToString()?? string.Empty)
             };
         }
     }
