@@ -44,7 +44,7 @@ namespace ControlboxLibreriaAPI.Authentication
 
                 return AuthenticateResult.Success(new AuthenticationTicket(new ClaimsPrincipal(new List<ClaimsIdentity>()
                 {
-                new ClaimsIdentity(ToClaims(firebaseToken.Claims))
+                new ClaimsIdentity(ToClaims(firebaseToken.Claims), nameof(FirebaseAuthHandler))
                 }
                 ), JwtBearerDefaults.AuthenticationScheme));
             }
