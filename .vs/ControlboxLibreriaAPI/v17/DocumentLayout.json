@@ -7,39 +7,16 @@
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\AppData\\Roaming\\Microsoft\\UserSecrets\\43aa8297-4471-440b-804a-cca65312ce75\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\authentication\\firebaseauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:authentication\\firebaseauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\resena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\controllers\\resenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:controllers\\resenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\entities\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:entities\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|d:\\projects\\controlboxlibreriaapi\\modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E1CD79-26BD-4D7A-AD63-D981B83A4E15}|ControlboxLibreriaAPI.csproj|solutionrelative:modelo\\filobookcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,52 +42,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\Usuario\\AppData\\Roaming\\Microsoft\\UserSecrets\\43aa8297-4471-440b-804a-cca65312ce75\\secrets.json",
-              "ToolTip": "C:\\Users\\Usuario\\AppData\\Roaming\\Microsoft\\UserSecrets\\43aa8297-4471-440b-804a-cca65312ce75\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-07T20:54:37.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-07T20:47:19.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-07T20:47:06.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FiloBookContext.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
-              "RelativeDocumentMoniker": "Modelo\\FiloBookContext.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
-              "RelativeToolTip": "Modelo\\FiloBookContext.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswCEAAAALAAAA",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
+              "RelativeDocumentMoniker": "Entities\\Usuario.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
+              "RelativeToolTip": "Entities\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T20:00:11.613Z",
+              "WhenOpened": "2024-07-08T00:16:17.162Z",
               "EditorCaption": ""
             },
             {
@@ -121,74 +61,35 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCsAAAA3AAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAA1wBUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T18:01:46.744Z",
+              "WhenOpened": "2024-07-08T00:14:01.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAgAAAA",
+              "DocumentIndex": 2,
+              "Title": "ResenasController.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\ResenasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ResenasController.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Controllers\\ResenasController.cs",
+              "RelativeToolTip": "Controllers\\ResenasController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T20:13:47.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
-              "RelativeDocumentMoniker": "Entities\\Usuario.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Usuario.cs",
-              "RelativeToolTip": "Entities\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:46:31.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Resena.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Resena.cs",
-              "RelativeDocumentMoniker": "Entities\\Resena.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Resena.cs",
-              "RelativeToolTip": "Entities\\Resena.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:55:45.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Libro.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Libro.cs",
-              "RelativeDocumentMoniker": "Entities\\Libro.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Entities\\Libro.cs",
-              "RelativeToolTip": "Entities\\Libro.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:19:24.847Z",
+              "WhenOpened": "2024-07-08T00:13:09.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FirebaseAuthHandler.cs",
-              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Authentication\\FirebaseAuthHandler.cs",
-              "RelativeDocumentMoniker": "Authentication\\FirebaseAuthHandler.cs",
-              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Authentication\\FirebaseAuthHandler.cs",
-              "RelativeToolTip": "Authentication\\FirebaseAuthHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAowA0AAAAAAAAA",
+              "Title": "FiloBookContext.cs",
+              "DocumentMoniker": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
+              "RelativeDocumentMoniker": "Modelo\\FiloBookContext.cs",
+              "ToolTip": "D:\\Projects\\ControlboxLibreriaAPI\\Modelo\\FiloBookContext.cs",
+              "RelativeToolTip": "Modelo\\FiloBookContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAswBkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T02:19:12.984Z",
+              "WhenOpened": "2024-07-06T20:00:11.613Z",
               "EditorCaption": ""
             }
           ]
@@ -210,16 +111,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1489,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

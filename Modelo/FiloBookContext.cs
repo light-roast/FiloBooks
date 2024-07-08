@@ -23,14 +23,6 @@ namespace ControlboxLibreriaAPI.Modelo
 
 
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder
-        //        .Entity<Usuario>()
-        //        .HasData(
-        //            new Usuario { UsuarioId = 1, NombreUsuario = "Daniel Echeverri LLano", Contraseña = "default_diffindb", CorreoElectronico = "echeverri121@gmail.com" }
-                    
-        //        );
-        //}
+ 
     }
 }

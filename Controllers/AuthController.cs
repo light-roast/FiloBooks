@@ -1,6 +1,9 @@
-﻿using FirebaseAdmin;
+﻿using ControlboxLibreriaAPI.Entities;
+using ControlboxLibreriaAPI.Modelo;
+using FirebaseAdmin;
 using FirebaseAdmin.Auth;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -10,11 +13,13 @@ public class AuthController : ControllerBase
 {
     private readonly FirebaseAuth _firebaseAuth;
     private readonly IConfiguration _configuration;
+    private readonly FiloBookContext _context;
 
-    public AuthController(FirebaseApp firebaseApp, IConfiguration configuration)
+    public AuthController(FirebaseApp firebaseApp, IConfiguration configuration, FiloBookContext context)
     {
         _firebaseAuth = FirebaseAuth.GetAuth(firebaseApp);
         _configuration = configuration;
+        _context = context;
     }
 
     [HttpPost("signup")]
@@ -29,12 +34,28 @@ public class AuthController : ControllerBase
                 DisplayName = model.DisplayName
             });
 
+            // Create a new user in your database
+            var newUser = new Usuario
+            {
+                FirebaseUserId = userRecord.Uid,
+                CorreoElectronico = userRecord.Email,
+                Username = userRecord.DisplayName,
+            };
+
+            _context.Usuario.Add(newUser);
+            await _context.SaveChangesAsync();
+
             var token = await _firebaseAuth.CreateCustomTokenAsync(userRecord.Uid);
-            return Ok(new { Token = token });
+            return Ok(new { Token = token, User = newUser });
         }
         catch (FirebaseAuthException ex)
         {
             return BadRequest(ex.Message);
+        }
+        catch (DbUpdateException ex)
+        {
+            // Handle database update errors
+            return StatusCode(500, "An error occurred while creating the user in the database.");
         }
     }
 
