@@ -52,7 +52,7 @@ public class AuthController : ControllerBase
         {
             return BadRequest(ex.Message);
         }
-        catch (DbUpdateException ex)
+        catch (DbUpdateException)
         {
             return StatusCode(500, "An error occurred while creating the user in the database.");
         }

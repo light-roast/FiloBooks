@@ -1,4 +1,6 @@
 ﻿namespace ControlboxLibreriaAPI.Entities;
+
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,9 +26,9 @@ public class Resena
     public DateTime FechaReseña { get; set; }
 
     // Navegation Properties
-    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
     public Usuario? Usuario { get; set; }
 
-    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
     public Libro? Libro { get; set; }
 }

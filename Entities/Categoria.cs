@@ -1,4 +1,6 @@
 ﻿namespace ControlboxLibreriaAPI.Entities;
+
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -12,7 +14,7 @@ public class Categoria
     public string? NombreCategoria { get; set; }
 
     // Navegation Property
-    [System.Text.Json.Serialization.JsonIgnore]
+    [JsonIgnore]
     public ICollection<Libro>? Libros { get; set; }
 }
 
