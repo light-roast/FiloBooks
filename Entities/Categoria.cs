@@ -12,6 +12,7 @@ public class Categoria
     public string? NombreCategoria { get; set; }
 
     // Navegation Property
+    [System.Text.Json.Serialization.JsonIgnore]
     public ICollection<Libro>? Libros { get; set; }
 }
 

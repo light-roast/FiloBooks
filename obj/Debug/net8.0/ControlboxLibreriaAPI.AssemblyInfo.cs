@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlboxLibreriaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3574096fc4ec549ec49c982c54b2180981216f10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21b618de97d0ac1ff94825b81d18446094827b62")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlboxLibreriaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlboxLibreriaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

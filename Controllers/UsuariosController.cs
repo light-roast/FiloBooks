@@ -42,68 +42,7 @@ namespace ControlboxLibreriaAPI.Controllers
 
             return usuario;
         }
-
-        // PUT: api/Usuarios/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario(string id, Usuario usuario)
-        {
-            if (!IsAuthorized(id))
-            {
-                return Forbid();
-            }
-
-            if (id != usuario.FirebaseUserId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(usuario).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuarioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // DELETE: api/Usuarios/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsuario(string id)
-        {
-            if (!IsAuthorized(id))
-            {
-                return Forbid();
-            }
-
-            var usuario = await _context.Usuario.FindAsync(id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            _context.Usuario.Remove(usuario);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool UsuarioExists(string id)
-        {
-            return _context.Usuario.Any(e => e.FirebaseUserId == id);
-        }
-
+          
         private bool IsAuthorized(string id)
         {
             var firebaseUser = HttpContext.Items["User"] as FirebaseToken;
