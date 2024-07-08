@@ -88,7 +88,7 @@ public class AuthController : ControllerBase
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorResponse = await response.Content.ReadAsStringAsync();
-                    return BadRequest(errorResponse + "Usuario y/o contraseña incorrectos.");
+                    return BadRequest($"{errorResponse}: Usuario y/o contraseña incorrectos.");
                 }
 
                 // Parse the successful response to get the user information and token
@@ -101,6 +101,7 @@ public class AuthController : ControllerBase
                 var refreshToken = (string)responseData.refreshToken; // Firebase refresh token
                 var expiresIn = (string)responseData.expiresIn; // Token expiry time in seconds
                 var email = (string)responseData.email; // User email
+                var displayName = (string)responseData.DisplayNam;
 
                 // Return the required information
                 return Ok(new
@@ -109,7 +110,8 @@ public class AuthController : ControllerBase
                     Token = idToken,
                     RefreshToken = refreshToken,
                     ExpiresIn = expiresIn,
-                    Email = email
+                    Email = email,
+                    DisplayName = displayName
                 });
             }
         }
