@@ -88,7 +88,7 @@ public class AuthController : ControllerBase
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorResponse = await response.Content.ReadAsStringAsync();
-                    return BadRequest(errorResponse);
+                    return BadRequest(errorResponse + "Usuario y/o contraseña incorrectos.");
                 }
 
                 // Parse the successful response to get the user information and token

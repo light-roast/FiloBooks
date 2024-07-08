@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 
-
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Database") ?? "Data Source=Database.db";
 // Add services to the container.
@@ -45,8 +44,23 @@ builder.Services.AddSingleton(sp =>
         Credential = GoogleCredential.FromFile(firebaseConfigPath)
     });
 });
+
+// Updated CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173") // Replace with your frontend origin if different
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .AllowCredentials();
+        });
+});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddScheme<AuthenticationSchemeOptions, FirebaseAuthHandler>(JwtBearerDefaults.AuthenticationScheme, (o)=> { });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -83,7 +97,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<FiloBookContext>(options =>
     options.UseSqlite(connectionString));
-builder.Services.AddCors();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -95,10 +109,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors(builder => builder
-.WithOrigins("http://localhost:5173/")
-    .AllowAnyMethod()
-        .AllowAnyHeader());
+// Use the CORS middleware with the named policy
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 
