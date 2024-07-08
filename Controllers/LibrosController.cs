@@ -25,14 +25,20 @@ namespace ControlboxLibreriaAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Libro>>> GetLibro()
         {
-            return await _context.Libro.ToListAsync();
+            return await _context.Libro
+                                 .Include(l => l.Categoria)
+                                 .Include(l => l.Reseñas)
+                                 .ToListAsync();
         }
 
         // GET: api/Libros/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Libro>> GetLibro(int id)
         {
-            var libro = await _context.Libro.FindAsync(id);
+            var libro = await _context.Libro
+                                      .Include(l => l.Categoria)
+                                      .Include(l => l.Reseñas)
+                                      .FirstOrDefaultAsync(l => l.LibroId == id);
 
             if (libro == null)
             {
