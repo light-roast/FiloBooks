@@ -24,6 +24,9 @@ public class Resena
     public DateTime FechaReseña { get; set; }
 
     // Navegation Properties
+    [System.Text.Json.Serialization.JsonIgnore]
     public Usuario? Usuario { get; set; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
     public Libro? Libro { get; set; }
 }

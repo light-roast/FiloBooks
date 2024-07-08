@@ -54,7 +54,6 @@ public class AuthController : ControllerBase
         }
         catch (DbUpdateException ex)
         {
-            // Handle database update errors
             return StatusCode(500, "An error occurred while creating the user in the database.");
         }
     }
@@ -119,8 +118,6 @@ public class AuthController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
-
-
 }
 
 public class SignUpModel

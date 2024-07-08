@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ControlboxLibreriaAPI.Entities;
 using ControlboxLibreriaAPI.Modelo;
+using ControlboxLibreriaAPI.Filters;
+using FirebaseAdmin.Auth;
 
 namespace ControlboxLibreriaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [FirebaseAuth]
     public class UsuariosController : ControllerBase
     {
         private readonly FiloBookContext _context;
@@ -21,17 +24,15 @@ namespace ControlboxLibreriaAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Usuarios
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuario()
-        {
-            return await _context.Usuario.ToListAsync();
-        }
-
         // GET: api/Usuarios/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(string id)
         {
+            if (!IsAuthorized(id))
+            {
+                return Forbid();
+            }
+
             var usuario = await _context.Usuario.FindAsync(id);
 
             if (usuario == null)
@@ -43,10 +44,14 @@ namespace ControlboxLibreriaAPI.Controllers
         }
 
         // PUT: api/Usuarios/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(string id, Usuario usuario)
         {
+            if (!IsAuthorized(id))
+            {
+                return Forbid();
+            }
+
             if (id != usuario.FirebaseUserId)
             {
                 return BadRequest();
@@ -73,35 +78,15 @@ namespace ControlboxLibreriaAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Usuarios
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
-        {
-            _context.Usuario.Add(usuario);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UsuarioExists(usuario.FirebaseUserId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetUsuario", new { id = usuario.FirebaseUserId }, usuario);
-        }
-
         // DELETE: api/Usuarios/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(string id)
         {
+            if (!IsAuthorized(id))
+            {
+                return Forbid();
+            }
+
             var usuario = await _context.Usuario.FindAsync(id);
             if (usuario == null)
             {
@@ -117,6 +102,12 @@ namespace ControlboxLibreriaAPI.Controllers
         private bool UsuarioExists(string id)
         {
             return _context.Usuario.Any(e => e.FirebaseUserId == id);
+        }
+
+        private bool IsAuthorized(string id)
+        {
+            var firebaseUser = HttpContext.Items["User"] as FirebaseToken;
+            return firebaseUser != null && firebaseUser.Uid == id;
         }
     }
 }

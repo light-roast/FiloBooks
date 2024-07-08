@@ -42,67 +42,67 @@ namespace ControlboxLibreriaAPI.Controllers
             return libro;
         }
 
-        // PUT: api/Libros/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLibro(int id, Libro libro)
-        {
-            if (id != libro.LibroId)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Libros/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutLibro(int id, Libro libro)
+        //{
+        //    if (id != libro.LibroId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(libro).State = EntityState.Modified;
+        //    _context.Entry(libro).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LibroExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!LibroExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Libros
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Libro>> PostLibro(Libro libro)
-        {
-            _context.Libro.Add(libro);
-            await _context.SaveChangesAsync();
+        //// POST: api/Libros
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Libro>> PostLibro(Libro libro)
+        //{
+        //    _context.Libro.Add(libro);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLibro", new { id = libro.LibroId }, libro);
-        }
+        //    return CreatedAtAction("GetLibro", new { id = libro.LibroId }, libro);
+        //}
 
-        // DELETE: api/Libros/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteLibro(int id)
-        {
-            var libro = await _context.Libro.FindAsync(id);
-            if (libro == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Libros/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteLibro(int id)
+        //{
+        //    var libro = await _context.Libro.FindAsync(id);
+        //    if (libro == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Libro.Remove(libro);
-            await _context.SaveChangesAsync();
+        //    _context.Libro.Remove(libro);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool LibroExists(int id)
-        {
-            return _context.Libro.Any(e => e.LibroId == id);
-        }
+        //private bool LibroExists(int id)
+        //{
+        //    return _context.Libro.Any(e => e.LibroId == id);
+        //}
     }
 }

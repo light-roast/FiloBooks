@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ControlboxLibreriaAPI.Entities;
 using ControlboxLibreriaAPI.Modelo;
+using ControlboxLibreriaAPI.Filters;
 
 namespace ControlboxLibreriaAPI.Controllers
 {
@@ -45,6 +46,7 @@ namespace ControlboxLibreriaAPI.Controllers
         // PUT: api/Resenas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [FirebaseAuth]
         public async Task<IActionResult> PutResena(int id, Resena resena)
         {
             if (id != resena.ReseñaId)
@@ -52,7 +54,22 @@ namespace ControlboxLibreriaAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(resena).State = EntityState.Modified;
+            var userId = HttpContext.Items["FirebaseUserId"] as string;
+            var existingResena = await _context.Resena.FindAsync(id);
+
+            if (existingResena == null)
+            {
+                return NotFound();
+            }
+
+            if (existingResena.FirebaseUserId != userId)
+            {
+                return Forbid("You can only edit your own reviews.");
+            }
+
+            existingResena.Calificacion = resena.Calificacion;
+            existingResena.Comentario = resena.Comentario;
+            existingResena.FechaReseña = DateTime.UtcNow;
 
             try
             {
@@ -76,8 +93,13 @@ namespace ControlboxLibreriaAPI.Controllers
         // POST: api/Resenas
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [FirebaseAuth]
         public async Task<ActionResult<Resena>> PostResena(Resena resena)
         {
+            var userId = HttpContext.Items["FirebaseUserId"] as string;
+            resena.FirebaseUserId = userId;
+            resena.FechaReseña = DateTime.UtcNow;
+
             _context.Resena.Add(resena);
             await _context.SaveChangesAsync();
 
@@ -86,12 +108,20 @@ namespace ControlboxLibreriaAPI.Controllers
 
         // DELETE: api/Resenas/5
         [HttpDelete("{id}")]
+        [FirebaseAuth]
         public async Task<IActionResult> DeleteResena(int id)
         {
+            var userId = HttpContext.Items["FirebaseUserId"] as string;
             var resena = await _context.Resena.FindAsync(id);
+
             if (resena == null)
             {
                 return NotFound();
+            }
+
+            if (resena.FirebaseUserId != userId)
+            {
+                return Forbid("You can only delete your own reviews.");
             }
 
             _context.Resena.Remove(resena);
