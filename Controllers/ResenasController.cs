@@ -110,6 +110,7 @@ namespace ControlboxLibreriaAPI.Controllers
             var resenas = await _context.Resena
                 .Include(r => r.Usuario) // Cargar el usuario asociado a la resena
                 .Where(r => r.LibroId == libroId)
+                .OrderByDescending(r => r.FechaReseña) // Ordenar por fecha de reseña descendente (más reciente primero)
                 .ToListAsync();
 
             var resenasDto = resenas.Select(r => new ResenaDto
@@ -119,9 +120,11 @@ namespace ControlboxLibreriaAPI.Controllers
                 UsuarioId = r.UsuarioFirebaseUserId,
                 Calificacion = r.Calificacion,
                 Comentario = r.Comentario,
+                FechaResena = r.FechaReseña,
                 Usuario = new UsuarioDto
                 {
                     FirebaseUserId = r.Usuario.FirebaseUserId,
+                    CorreoElectronico = r.Usuario.CorreoElectronico,
                     Username = r.Usuario.Username
                 }
             }).ToList();
@@ -129,22 +132,17 @@ namespace ControlboxLibreriaAPI.Controllers
             return resenasDto;
         }
 
+
         // DELETE: api/Resenas/5
         [HttpDelete("{id}")]
         [FirebaseAuth]
         public async Task<IActionResult> DeleteResena(int id)
         {
-            var userId = HttpContext.Items["FirebaseUserId"] as string;
             var resena = await _context.Resena.FindAsync(id);
 
             if (resena == null)
             {
                 return NotFound();
-            }
-
-            if (resena.UsuarioFirebaseUserId != userId)
-            {
-                return Forbid("You can only delete your own reviews.");
             }
 
             _context.Resena.Remove(resena);
