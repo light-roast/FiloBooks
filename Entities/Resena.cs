@@ -10,7 +10,7 @@ public class Resena
     public int ReseñaId { get; set; }
 
     [Required]
-    public string? FirebaseUserId { get; set; }
+    public string? UsuarioFirebaseUserId { get; set; }
 
     [Required]
     public int LibroId { get; set; }
@@ -23,12 +23,12 @@ public class Resena
     public string? Comentario { get; set; }
 
     [Required]
+    [System.Text.Json.Serialization.JsonIgnore]
     public DateTime FechaReseña { get; set; }
 
     // Navegation Properties
-    [JsonIgnore]
     public Usuario? Usuario { get; set; }
 
-    [JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public Libro? Libro { get; set; }
 }

@@ -27,7 +27,6 @@ namespace ControlboxLibreriaAPI.Controllers
         {
             return await _context.Libro
                                  .Include(l => l.Categoria)
-                                 .Include(l => l.Reseñas)
                                  .ToListAsync();
         }
 

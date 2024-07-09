@@ -62,7 +62,7 @@ namespace ControlboxLibreriaAPI.Controllers
                 return NotFound();
             }
 
-            if (existingResena.FirebaseUserId != userId)
+            if (existingResena.UsuarioFirebaseUserId != userId)
             {
                 return Forbid("You can only edit your own reviews.");
             }
@@ -96,14 +96,37 @@ namespace ControlboxLibreriaAPI.Controllers
         [FirebaseAuth]
         public async Task<ActionResult<Resena>> PostResena(Resena resena)
         {
-            var userId = HttpContext.Items["FirebaseUserId"] as string;
-            resena.FirebaseUserId = userId;
             resena.FechaReseña = DateTime.UtcNow;
 
             _context.Resena.Add(resena);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetResena", new { id = resena.ReseñaId }, resena);
+        }
+
+        [HttpGet("libro/{libroId}")]
+        public async Task<ActionResult<IEnumerable<ResenaDto>>> GetResenasPorLibro(int libroId)
+        {
+            var resenas = await _context.Resena
+                .Include(r => r.Usuario) // Cargar el usuario asociado a la resena
+                .Where(r => r.LibroId == libroId)
+                .ToListAsync();
+
+            var resenasDto = resenas.Select(r => new ResenaDto
+            {
+                ResenaId = r.ReseñaId,
+                LibroId = r.LibroId,
+                UsuarioId = r.UsuarioFirebaseUserId,
+                Calificacion = r.Calificacion,
+                Comentario = r.Comentario,
+                Usuario = new UsuarioDto
+                {
+                    FirebaseUserId = r.Usuario.FirebaseUserId,
+                    Username = r.Usuario.Username
+                }
+            }).ToList();
+
+            return resenasDto;
         }
 
         // DELETE: api/Resenas/5
@@ -119,7 +142,7 @@ namespace ControlboxLibreriaAPI.Controllers
                 return NotFound();
             }
 
-            if (resena.FirebaseUserId != userId)
+            if (resena.UsuarioFirebaseUserId != userId)
             {
                 return Forbid("You can only delete your own reviews.");
             }
@@ -135,4 +158,23 @@ namespace ControlboxLibreriaAPI.Controllers
             return _context.Resena.Any(e => e.ReseñaId == id);
         }
     }
+    
+}
+
+public class ResenaDto
+{
+    public int ResenaId { get; set; }
+    public int LibroId { get; set; }
+    public string UsuarioId { get; set; }
+    public int Calificacion { get; set; }
+    public string Comentario { get; set; }
+    public DateTime FechaResena { get; set; }
+    public UsuarioDto Usuario { get; set; }
+}
+
+public class UsuarioDto
+{
+    public string FirebaseUserId { get; set; }
+    public string CorreoElectronico { get; set; }
+    public string Username { get; set; }
 }

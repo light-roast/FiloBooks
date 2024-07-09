@@ -3,6 +3,7 @@ using System;
 using ControlboxLibreriaAPI.Modelo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControlboxLibreriaAPI.Migrations
 {
     [DbContext(typeof(FiloBookContext))]
-    partial class FiloBookContextModelSnapshot : ModelSnapshot
+    [Migration("20240709170405_NewMIg")]
+    partial class NewMIg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
@@ -209,11 +212,14 @@ namespace ControlboxLibreriaAPI.Migrations
                     b.Property<DateTime>("FechaReseña")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FirebaseUserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UsuarioFirebaseUserId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ReseñaId");
@@ -265,9 +271,7 @@ namespace ControlboxLibreriaAPI.Migrations
 
                     b.HasOne("ControlboxLibreriaAPI.Entities.Usuario", "Usuario")
                         .WithMany("Reseñas")
-                        .HasForeignKey("UsuarioFirebaseUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsuarioFirebaseUserId");
 
                     b.Navigation("Libro");
 

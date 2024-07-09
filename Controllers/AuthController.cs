@@ -101,7 +101,8 @@ public class AuthController : ControllerBase
                 var refreshToken = (string)responseData.refreshToken; // Firebase refresh token
                 var expiresIn = (string)responseData.expiresIn; // Token expiry time in seconds
                 var email = (string)responseData.email; // User email
-                var displayName = (string)responseData.DisplayNam;
+                var user = await _context.Usuario.FirstOrDefaultAsync(u => u.FirebaseUserId == localId);
+                var displayName = user?.Username ?? "Unknown";
 
                 // Return the required information
                 return Ok(new

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -7,11 +8,89 @@
 namespace ControlboxLibreriaAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class LibrosCatURL : Migration
+    public partial class NewMIg : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Categoria",
+                columns: table => new
+                {
+                    CategoriaId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    NombreCategoria = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categoria", x => x.CategoriaId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    FirebaseUserId = table.Column<string>(type: "TEXT", nullable: false),
+                    Username = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    CorreoElectronico = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.FirebaseUserId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Libro",
+                columns: table => new
+                {
+                    LibroId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulo = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    Autor = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Resumen = table.Column<string>(type: "TEXT", nullable: true),
+                    CategoriaId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UrlImagen = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Libro", x => x.LibroId);
+                    table.ForeignKey(
+                        name: "FK_Libro_Categoria_CategoriaId",
+                        column: x => x.CategoriaId,
+                        principalTable: "Categoria",
+                        principalColumn: "CategoriaId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Resena",
+                columns: table => new
+                {
+                    ReseñaId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirebaseUserId = table.Column<string>(type: "TEXT", nullable: false),
+                    LibroId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Calificacion = table.Column<int>(type: "INTEGER", nullable: false),
+                    Comentario = table.Column<string>(type: "TEXT", nullable: false),
+                    FechaReseña = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UsuarioFirebaseUserId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resena", x => x.ReseñaId);
+                    table.ForeignKey(
+                        name: "FK_Resena_Libro_LibroId",
+                        column: x => x.LibroId,
+                        principalTable: "Libro",
+                        principalColumn: "LibroId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Resena_Usuario_UsuarioFirebaseUserId",
+                        column: x => x.UsuarioFirebaseUserId,
+                        principalTable: "Usuario",
+                        principalColumn: "FirebaseUserId");
+                });
+
             migrationBuilder.InsertData(
                 table: "Categoria",
                 columns: new[] { "CategoriaId", "NombreCategoria" },
@@ -41,90 +120,37 @@ namespace ControlboxLibreriaAPI.Migrations
                     { 10, "Michel Foucault.", 4, "Se trata de la transcripción de la última serie de conferencias dictadas por Michel Foucault en el Collège de France en 1984. En estas lecciones, Foucault explora la noción de la \"parresia\" o el \"decir veraz\", un concepto de la antigua filosofía griega que se refiere a la franqueza y la valentía para decir la verdad en contextos peligrosos o difíciles. Foucault examina cómo la parresia se relaciona con la ética personal, la política y la filosofía. A través del análisis de figuras históricas como Sócrates y Diógenes, Foucault discute cómo el acto de decir la verdad es un ejercicio de libertad y un desafío al poder establecido. \"El Coraje de la Verdad\" concluye con reflexiones sobre el papel del intelectual en la sociedad y la importancia de la verdad como práctica ética.", "El coraje de la verdad.", "https://firebasestorage.googleapis.com/v0/b/filobook-9c043.appspot.com/o/Coraje.webp.webp?alt=media&token=e204ad9f-3531-4f2f-87fa-ae77f245083b" },
                     { 11, "Julian Baggini.", 4, "Es un libro que explora las diferencias y similitudes en las perspectivas filosóficas y culturales alrededor del mundo. Baggini examina cómo diversas tradiciones filosóficas abordan temas universales como la verdad, la ética y la existencia. El libro invita a reflexionar sobre la diversidad de pensamiento humano y cómo las distintas culturas han desarrollado respuestas a las grandes preguntas de la vida.", "Cómo piensa el mundo", "https://firebasestorage.googleapis.com/v0/b/filobook-9c043.appspot.com/o/C%C3%B3mo%20piensa.webp.webp?alt=media&token=334f8dd9-7155-41fc-9f69-0638442e2161" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Libro_CategoriaId",
+                table: "Libro",
+                column: "CategoriaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resena_LibroId",
+                table: "Resena",
+                column: "LibroId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resena_UsuarioFirebaseUserId",
+                table: "Resena",
+                column: "UsuarioFirebaseUserId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 1);
+            migrationBuilder.DropTable(
+                name: "Resena");
 
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 2);
+            migrationBuilder.DropTable(
+                name: "Libro");
 
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 3);
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 4);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 5);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 6);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 7);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 8);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 9);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 10);
-
-            migrationBuilder.DeleteData(
-                table: "Libro",
-                keyColumn: "LibroId",
-                keyValue: 11);
-
-            migrationBuilder.DeleteData(
-                table: "Categoria",
-                keyColumn: "CategoriaId",
-                keyValue: 1);
-
-            migrationBuilder.DeleteData(
-                table: "Categoria",
-                keyColumn: "CategoriaId",
-                keyValue: 2);
-
-            migrationBuilder.DeleteData(
-                table: "Categoria",
-                keyColumn: "CategoriaId",
-                keyValue: 3);
-
-            migrationBuilder.DeleteData(
-                table: "Categoria",
-                keyColumn: "CategoriaId",
-                keyValue: 4);
-
-            migrationBuilder.DeleteData(
-                table: "Categoria",
-                keyColumn: "CategoriaId",
-                keyValue: 5);
+            migrationBuilder.DropTable(
+                name: "Categoria");
         }
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControlboxLibreriaAPI.Migrations
 {
     [DbContext(typeof(FiloBookContext))]
-    [Migration("20240708151541_LibrosCatURL")]
-    partial class LibrosCatURL
+    [Migration("20240709170940_NReseña")]
+    partial class NReseña
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -212,14 +212,11 @@ namespace ControlboxLibreriaAPI.Migrations
                     b.Property<DateTime>("FechaReseña")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirebaseUserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("LibroId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UsuarioFirebaseUserId")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ReseñaId");
@@ -271,7 +268,9 @@ namespace ControlboxLibreriaAPI.Migrations
 
                     b.HasOne("ControlboxLibreriaAPI.Entities.Usuario", "Usuario")
                         .WithMany("Reseñas")
-                        .HasForeignKey("UsuarioFirebaseUserId");
+                        .HasForeignKey("UsuarioFirebaseUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Libro");
 
