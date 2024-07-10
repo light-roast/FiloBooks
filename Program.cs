@@ -51,7 +51,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
-            builder.WithOrigins("https://filobooks.netlify.app/") // Replace with your frontend origin if different
+            builder.WithOrigins("https://filobooks.netlify.app/", "https://filobooks.netlify.app") // Replace with your frontend origin if different
                    .AllowAnyMethod()
                    .AllowAnyHeader()
                    .AllowCredentials();
